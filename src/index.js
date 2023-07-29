@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const RouterUser = require("./routes/user.route");
+const RouterCal = require("./routes/calculator.route")
 const cors = require("cors");
 
 mongoose.set("strictQuery", false);
@@ -19,6 +20,7 @@ mongoose
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/", RouterUser);
+app.use("/cal", RouterCal);
 
 app.use(express.static(__dirname))
 
